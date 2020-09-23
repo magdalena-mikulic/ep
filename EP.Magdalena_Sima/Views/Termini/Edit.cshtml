@@ -1,0 +1,51 @@
+﻿@model EP.Magdalena_Sima.Models.Termin.TerminFields
+
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h1>Uredi</h1>
+
+<h4>Go</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group">
+                <label asp-for="KEYWORD" class="control-label"></label>
+                <input asp-for="KEYWORD" class="form-control"/>
+                <span asp-validation-for="KEYWORD" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="START_DT" class="control-label"></label>
+                <input asp-for="START_DT" class="form-control"/>
+                <span asp-validation-for="START_DT" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="END_DT" class="control-label"></label>
+                <input asp-for="END_DT" class="form-control"/>
+                <span asp-validation-for="END_DT" class="text-danger"></span>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GWDURATIONMANUAL"/> @Html.DisplayNameFor(model => model.GWDURATIONMANUAL)
+                </label>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Nazad</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

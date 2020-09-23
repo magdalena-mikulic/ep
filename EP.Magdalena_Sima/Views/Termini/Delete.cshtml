@@ -1,0 +1,47 @@
+﻿@model EP.Magdalena_Sima.Models.Termin.TerminFields
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>VacationFields</h4>
+    <hr/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KEYWORD)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KEYWORD)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.START_DT)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.START_DT)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.END_DT)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.END_DT)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GWDURATIONMANUAL)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GWDURATIONMANUAL)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="GGUID"/>
+        <input type="submit" value="Delete" class="btn btn-danger"/> |
+        <a asp-action="Index">Nazad</a>
+    </form>
+</div>

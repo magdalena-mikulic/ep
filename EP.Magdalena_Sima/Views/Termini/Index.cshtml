@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EP.Magdalena_Sima.Models.Termin.TerminFields>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KEYWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.START_DT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.END_DT)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KEYWORD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.START_DT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.END_DT)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GGUID">Uredi</a> |
+                <a asp-action="Details" asp-route-id="@item.GGUID">Detalji</a> |
+                <a asp-action="Delete" asp-route-id="@item.GGUID">Izbriši</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
